@@ -22,7 +22,10 @@ namespace Gmtl.HandyLib.AspNetCore
                     .Where(s => !string.IsNullOrWhiteSpace(s))
                     .Aggregate((current, next) => current + ". " + next);
 
-                errors.Add(item.Key, errorsForKey);
+                if (!string.IsNullOrWhiteSpace(errorsForKey))
+                {
+                    errors.Add(item.Key, errorsForKey);
+                }               
             }
 
             return errors;
