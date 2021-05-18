@@ -17,18 +17,10 @@ namespace Gmtl.HandyLib.AspNetCore
 
             foreach (var item in modelState)
             {
-                foreach (var error in item.Value.Errors)
-                {
-                    if (!errors.ContainsKey(item.Key))
-                    {
-                        //errors.Add(item.Key, error.ErrorMessage);
-                    }
-                }
-
                 string errorsForKey = item.Value.Errors
                     .Select(e => e.ErrorMessage)
-                    .Aggregate("", //handle empty list case.
-                        (current, next) => current + ". " + next);
+                    .Where(s => !string.IsNullOrWhiteSpace(s))
+                    .Aggregate((current, next) => current + ". " + next);
 
                 errors.Add(item.Key, errorsForKey);
             }
