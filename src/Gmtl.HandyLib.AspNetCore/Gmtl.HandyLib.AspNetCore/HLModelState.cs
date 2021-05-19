@@ -17,15 +17,15 @@ namespace Gmtl.HandyLib.AspNetCore
 
             foreach (var item in modelState)
             {
-                string errorsForKey = item.Value.Errors
+                var errorsForAggregation = item.Value.Errors
                     .Select(e => e.ErrorMessage)
-                    .Where(s => !string.IsNullOrWhiteSpace(s))
-                    .Aggregate((current, next) => current + ". " + next);
+                    .Where(s => !string.IsNullOrWhiteSpace(s));
 
-                if (!string.IsNullOrWhiteSpace(errorsForKey))
+                if (errorsForAggregation.Count() > 0)
                 {
+                    string errorsForKey = errorsForAggregation.Aggregate((current, next) => current + ". " + next);
                     errors.Add(item.Key, errorsForKey);
-                }               
+                }
             }
 
             return errors;
