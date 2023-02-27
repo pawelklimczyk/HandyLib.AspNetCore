@@ -5,12 +5,12 @@ namespace Gmtl.HandyLib.AspNetCore
 {
     public class JsonResultFromString : ObjectResult
     {
-        private static MediaTypeCollection contentTypes = new MediaTypeCollection { System.Net.Mime.MediaTypeNames.Application.Json };
+        private static MediaTypeCollection _contentTypes = new MediaTypeCollection { System.Net.Mime.MediaTypeNames.Application.Json };
 
         public JsonResultFromString(object value) : base(value)
         {
             StatusCode = 200;
-            ContentTypes = contentTypes;
+            ContentTypes = _contentTypes;
         }
     }
 }
