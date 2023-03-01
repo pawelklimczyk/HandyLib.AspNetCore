@@ -20,7 +20,7 @@ namespace Gmtl.HandyLib.AspNetCore.HostedServices
 
         public Task StartAsync(CancellationToken cancellationToken)
         {
-            _executingTask = Execute(_stoppingCts.Token);
+            _executingTask = ExecuteInternal(_stoppingCts.Token);
 
             _logger.LogInformation($"Started {GetType().Name}");
 
@@ -53,11 +53,11 @@ namespace Gmtl.HandyLib.AspNetCore.HostedServices
             }
         }
 
-        protected async Task Execute(CancellationToken stoppingToken)
+        protected async Task ExecuteInternal(CancellationToken stoppingToken)
         {
             try
             {
-                await ProcessToExecute(_stoppingCts.Token);
+                await ExecuteAction(_stoppingCts.Token);
             }
             catch (TaskCanceledException)
             {
@@ -69,6 +69,6 @@ namespace Gmtl.HandyLib.AspNetCore.HostedServices
             }
         }
 
-        protected abstract Task ProcessToExecute(CancellationToken stoppingCtsToken);
+        protected abstract Task ExecuteAction(CancellationToken stoppingCtsToken);
     }
 }
