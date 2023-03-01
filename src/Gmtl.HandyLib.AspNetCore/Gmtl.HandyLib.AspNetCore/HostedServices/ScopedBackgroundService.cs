@@ -15,22 +15,12 @@ namespace Gmtl.HandyLib.AspNetCore.HostedServices
             _serviceScopeFactory = serviceScopeFactory;
         }
 
-        protected override async Task Process(CancellationToken stoppingCtsToken)
+        protected override async Task ProcessToExecute(CancellationToken stoppingCtsToken)
         {
             using var scope = _serviceScopeFactory.CreateScope();
-            try
-            {
-                await ProcessInScope(scope.ServiceProvider, stoppingCtsToken);
-            }
-            catch (TaskCanceledException)
-            {
-            }
-            catch (Exception exc)
-            {
-                _logger.LogError(exc, GetType().Name);
-            }
+            await ProcessToExecuteInScope(scope.ServiceProvider, stoppingCtsToken);
         }
 
-        public abstract Task ProcessInScope(IServiceProvider serviceProvider, CancellationToken token);
+        protected abstract Task ProcessToExecuteInScope(IServiceProvider serviceProvider, CancellationToken token);
     }
 }

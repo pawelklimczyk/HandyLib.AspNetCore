@@ -18,9 +18,9 @@ namespace Gmtl.HandyLib.AspNetCore.HostedServices
             _logger = logger;
         }
 
-        public virtual Task StartAsync(CancellationToken cancellationToken)
+        public Task StartAsync(CancellationToken cancellationToken)
         {
-            _executingTask = ExecuteAsync(_stoppingCts.Token);
+            _executingTask = Execute(_stoppingCts.Token);
 
             _logger.LogInformation($"Started {GetType().Name}");
 
@@ -32,7 +32,7 @@ namespace Gmtl.HandyLib.AspNetCore.HostedServices
             return Task.CompletedTask;
         }
 
-        public virtual async Task StopAsync(CancellationToken cancellationToken)
+        public async Task StopAsync(CancellationToken cancellationToken)
         {
             if (_executingTask == null)
             {
@@ -53,11 +53,11 @@ namespace Gmtl.HandyLib.AspNetCore.HostedServices
             }
         }
 
-        protected virtual async Task ExecuteAsync(CancellationToken stoppingToken)
+        protected async Task Execute(CancellationToken stoppingToken)
         {
             try
             {
-                await Process(_stoppingCts.Token);
+                await ProcessToExecute(_stoppingCts.Token);
             }
             catch (TaskCanceledException)
             {
@@ -69,6 +69,6 @@ namespace Gmtl.HandyLib.AspNetCore.HostedServices
             }
         }
 
-        protected abstract Task Process(CancellationToken stoppingCtsToken);
+        protected abstract Task ProcessToExecute(CancellationToken stoppingCtsToken);
     }
 }
