@@ -3,11 +3,11 @@ using Microsoft.AspNetCore.Mvc.Formatters;
 
 namespace Gmtl.HandyLib.AspNetCore
 {
-    public class JsonResultFromString : ObjectResult
+    public class HLJsonResult : ObjectResult
     {
         private static MediaTypeCollection _contentTypes = new MediaTypeCollection { System.Net.Mime.MediaTypeNames.Application.Json };
 
-        public JsonResultFromString(object value) : base(value)
+        public HLJsonResult(object value) : base(value)
         {
             StatusCode = 200;
             ContentTypes = _contentTypes;

@@ -1,6 +1,6 @@
 ﻿namespace Gmtl.HandyLib.AspNetCore.Models
 {
-    public abstract class AbstractPageViewModel
+    public abstract class HLAbstractPageViewModel
     {
         private string _metaTitle;
         public string MetaTitle

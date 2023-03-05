@@ -6,14 +6,14 @@ using Microsoft.Extensions.Logging;
 
 namespace Gmtl.HandyLib.AspNetCore.HostedServices
 {
-    public abstract class BackgroundService : IHostedService
+    public abstract class HLBackgroundService : IHostedService
     {
         private Task _executingTask;
 
         protected readonly CancellationTokenSource _stoppingCts = new();
         protected readonly ILogger _logger;
 
-        public BackgroundService(ILogger logger)
+        public HLBackgroundService(ILogger logger)
         {
             _logger = logger;
         }

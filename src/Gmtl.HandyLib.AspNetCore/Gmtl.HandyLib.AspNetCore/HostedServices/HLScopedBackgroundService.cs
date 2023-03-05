@@ -6,11 +6,11 @@ using Microsoft.Extensions.Logging;
 
 namespace Gmtl.HandyLib.AspNetCore.HostedServices
 {
-    public abstract class ScopedBackgroundService : BackgroundService
+    public abstract class HLScopedBackgroundService : HLBackgroundService
     {
         protected readonly IServiceScopeFactory _serviceScopeFactory;
 
-        protected ScopedBackgroundService(IServiceScopeFactory serviceScopeFactory, ILogger logger) : base(logger)
+        protected HLScopedBackgroundService(IServiceScopeFactory serviceScopeFactory, ILogger logger) : base(logger)
         {
             _serviceScopeFactory = serviceScopeFactory;
         }
