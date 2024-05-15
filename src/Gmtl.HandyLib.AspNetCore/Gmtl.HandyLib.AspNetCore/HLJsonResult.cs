@@ -13,4 +13,14 @@ namespace Gmtl.HandyLib.AspNetCore
             ContentTypes = _contentTypes;
         }
     }
+
+    public static class HLJsonResultHelpers
+    {
+        public static HLJsonResult ToHLJsonResult(this object value)
+        {
+            if (value == null) { return null; }
+
+            return new HLJsonResult(value);
+        }
+    }
 }

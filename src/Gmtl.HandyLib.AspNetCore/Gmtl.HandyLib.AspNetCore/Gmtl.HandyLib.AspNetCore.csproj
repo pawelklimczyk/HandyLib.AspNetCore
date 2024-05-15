@@ -1,40 +1,40 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
-  <PropertyGroup>
-    <TargetFramework>net6.0</TargetFramework>
-    <Version>1.0.0</Version>
-    <GenerateAssemblyInfo>true</GenerateAssemblyInfo>
-    <RuntimeIdentifiers>win7-x86;win7-x64</RuntimeIdentifiers>
-    <Authors>Gemotial</Authors>
-    <RequireLicenseAcceptance>false</RequireLicenseAcceptance>
-    <Language>en-US</Language>
-    <AssemblyName>Gmtl.HandyLib.AspNetCore</AssemblyName>
-    <AssemblyTitle>Gmtl.HandyLib.AspNetCore</AssemblyTitle>
-    <NeutralLanguage>en-US</NeutralLanguage>
-    <PackageId>Gmtl.HandyLib.AspNetCore</PackageId>
-    <RootNamespace>Gmtl.HandyLib.AspNetCore</RootNamespace>
-    <Title>Gmtl.HandyLib.AspNetCore</Title>
-    <Description>Helpers for aspnet core projects</Description>
-    <Summary></Summary>
-    <PackageCopyright>Gemotial 2015-2023</PackageCopyright>
-    <PackageTags></PackageTags>
-    <PackageReleaseNotes></PackageReleaseNotes>
-    <PackageIconUrl></PackageIconUrl>
-    <PackageProjectUrl>https://github.com/pawelklimczyk/HandyLib.AspNetCore</PackageProjectUrl>
-    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
-    <Copyright>Gemotial, 2015-2023</Copyright>
-    <RepositoryType>git</RepositoryType>
-    <Company>Gemotial</Company>
-    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-    <RepositoryUrl>https://github.com/pawelklimczyk/HandyLib.AspNetCore</RepositoryUrl>
-    <VsxmdAutoDeleteXml>True</VsxmdAutoDeleteXml>
-    <IncludeSymbols>true</IncludeSymbols>
-    <SymbolPackageFormat>snupkg</SymbolPackageFormat>
-  </PropertyGroup>
-  <PropertyGroup>
-    <PackageLicenseExpression>MIT</PackageLicenseExpression>
-  </PropertyGroup>
-  <ItemGroup>
-    <PackageReference Include="Microsoft.AspNetCore.App" Version="2.2.8" />
-  </ItemGroup>
+	<PropertyGroup>
+		<TargetFrameworks>net6.0;net7.0;net8.0</TargetFrameworks>
+		<Version>1.0.0</Version>
+		<GenerateAssemblyInfo>true</GenerateAssemblyInfo>
+		<RuntimeIdentifiers>win-x86;win-x64</RuntimeIdentifiers>
+		<Authors>Gemotial</Authors>
+		<RequireLicenseAcceptance>false</RequireLicenseAcceptance>
+		<Language>en-US</Language>
+		<AssemblyName>Gmtl.HandyLib.AspNetCore</AssemblyName>
+		<AssemblyTitle>Gmtl.HandyLib.AspNetCore</AssemblyTitle>
+		<NeutralLanguage>en-US</NeutralLanguage>
+		<PackageId>Gmtl.HandyLib.AspNetCore</PackageId>
+		<RootNamespace>Gmtl.HandyLib.AspNetCore</RootNamespace>
+		<Title>Gmtl.HandyLib.AspNetCore</Title>
+		<Description>Helpers for aspnet core projects</Description>
+		<Summary></Summary>
+		<PackageCopyright>Gemotial 2015-2024</PackageCopyright>
+		<PackageTags></PackageTags>
+		<PackageReleaseNotes></PackageReleaseNotes>
+		<PackageIconUrl></PackageIconUrl>
+		<PackageProjectUrl>https://github.com/pawelklimczyk/HandyLib.AspNetCore</PackageProjectUrl>
+		<AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+		<Copyright>Gemotial, 2015-2024</Copyright>
+		<RepositoryType>git</RepositoryType>
+		<Company>Gemotial</Company>
+		<GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+		<RepositoryUrl>https://github.com/pawelklimczyk/HandyLib.AspNetCore</RepositoryUrl>
+		<VsxmdAutoDeleteXml>True</VsxmdAutoDeleteXml>
+		<IncludeSymbols>true</IncludeSymbols>
+		<SymbolPackageFormat>snupkg</SymbolPackageFormat>
+	</PropertyGroup>
+	<PropertyGroup>
+		<PackageLicenseExpression>MIT</PackageLicenseExpression>
+	</PropertyGroup>
+	<ItemGroup>
+		<PackageReference Include="Microsoft.AspNetCore.App" Version="2.2.8" />
+	</ItemGroup>
 </Project>
